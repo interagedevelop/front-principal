@@ -24,7 +24,7 @@
     ],
     "paths": {
       "lib": [
-        "../front-base/dist/lib"
+        "../front-base/dist/adm-default"
       ],
       "@angular/*": [
         "./node_modules/@angular/*"
