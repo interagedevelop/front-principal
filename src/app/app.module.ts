@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ButtonModule} from 'primeng/button';
-import {LibModule} from 'lib'
+import { ButtonModule } from 'primeng/button';
+import { LibModule } from 'lib';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,10 @@ import {LibModule} from 'lib'
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    LibModule,
+    LibModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

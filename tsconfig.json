@@ -21,15 +21,15 @@
     "lib": [
       "es2020",
       "dom"
-    ]
-  },
-  "paths": {
-    "lib": [
-      "../front-base/dist/lib"
     ],
-    "@angular/*": [
-      "./node_modules/@angular/*"
-    ]
+    "paths": {
+      "lib": [
+        "../front-base/dist/lib"
+      ],
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
