@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { HomeGrupoEmpresaComponent } from './pages/components/home-grupo-empresa/home-grupo-empresa.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -27,7 +28,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeGrupoEmpresaComponent
   ],
   imports: [
     BrowserModule,
