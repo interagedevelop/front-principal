@@ -23,6 +23,14 @@
       "dom"
     ]
   },
+  "paths": {
+    "lib": [
+      "../front-base/dist/lib"
+    ],
+    "@angular/*": [
+      "./node_modules/@angular/*"
+    ]
+  },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
