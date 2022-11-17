@@ -1,25 +1,23 @@
+import { MenubarModule } from 'primeng/menubar';
+import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuComponent } from './menu.component';
-
-import {ButtonModule} from 'primeng/button';
-import {MenubarModule} from 'primeng/menubar';
-import {MenuItem} from 'primeng/api';
+import { HeaderFooterComponent } from './header-footer.component';
 
 
 
 @NgModule({
   declarations: [
-    MenuComponent,
+    HeaderFooterComponent
   ],
   imports: [
     CommonModule,
     ButtonModule,
     MenubarModule,
     RouterModule.forChild([
-      {path: '', component: MenuComponent}
+      {path: '', component: HeaderFooterComponent}
     ])
   ]
 })
-export class MenuModule { }
+export class HeaderFooterModule { }

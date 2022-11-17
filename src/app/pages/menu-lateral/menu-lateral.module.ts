@@ -13,10 +13,7 @@ import { MenuLateralComponent } from './menu-lateral.component';
   imports: [
     CommonModule,
     SidebarModule,
-    ButtonModule
-  ],
-  exports: [
-    MenuLateralComponent
+    ButtonModule,
   ]
 })
 export class MenuLateralModule { }
