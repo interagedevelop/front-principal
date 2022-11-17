@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderFooterComponent } from './header-footer.component';
 
+import {InputTextModule} from 'primeng/inputtext';
+
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { HeaderFooterComponent } from './header-footer.component';
     CommonModule,
     ButtonModule,
     MenubarModule,
+    InputTextModule,
     RouterModule.forChild([
       {path: '', component: HeaderFooterComponent}
     ])

@@ -1,8 +1,18 @@
 <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <div class="logo-header">
+            <img src="assets/logo/default-logo.png" alt="logo da empresa">
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+        <button pButton type="button" icon="pi pi-bell" iconPos="left" class="btn-menu mr-2"></button>
+        <button pButton type="button" icon="pi pi-user" iconPos="left" class="btn-menu"></button>
+    </ng-template>
 
 </p-menubar>
 
 <section class="layout-footer">
     <img class="logo-empresa" src="assets/logo/default-logo.png" alt="logo empresa">
-    <p>Sua empresa - 2022</p>
+    <p>Interage - 2022</p>
 </section>
