@@ -1,4 +1,4 @@
-import { HomeGrupoEmpresaModule } from './pages/components/home-grupo-empresa/home-grupo-empresa.module';
+import { HomeGrupoEmpresaModule } from './components/home-grupo-empresa/home-grupo-empresa.module';
 import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { MenuLateralModule } from './pages/menu-lateral/menu-lateral.module';
 import { MenuModule } from './pages/menu/menu.module';
@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-import { HomeGrupoEmpresaComponent } from './pages/components/home-grupo-empresa/home-grupo-empresa.component';
+import { HomeGrupoEmpresaComponent } from './components/home-grupo-empresa/home-grupo-empresa.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
