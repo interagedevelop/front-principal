@@ -7,7 +7,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule),
     // canLoad: [AuthGuard]
   },
-  { path: '',   redirectTo: '/menu', pathMatch: 'full' }
+  {
+    path: 'home-grupo-empresa',
+    loadChildren: () => import('./pages/components/home-grupo-empresa/home-grupo-empresa.module').then(m => m.HomeGrupoEmpresaModule),
+    // canLoad: [AuthGuard]
+  },
+  { path: '',   redirectTo: '/home-grupo-empresa', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { PrimeNGConfig } from 'primeng/api';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeGrupoEmpresaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private primengConfig: PrimeNGConfig) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.primengConfig.ripple = true;
   }
 
 }

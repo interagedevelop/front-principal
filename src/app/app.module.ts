@@ -1,3 +1,4 @@
+import { HomeGrupoEmpresaModule } from './pages/components/home-grupo-empresa/home-grupo-empresa.module';
 import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { MenuLateralModule } from './pages/menu-lateral/menu-lateral.module';
 import { MenuModule } from './pages/menu/menu.module';
@@ -36,6 +37,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppRoutingModule,
     MenuModule,
     MenuLateralModule,
+    HomeGrupoEmpresaModule,
     ButtonModule,
     SidebarModule,
     BrowserModule,
