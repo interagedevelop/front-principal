@@ -1,15 +1,17 @@
-import { HomeGrupoEmpresaModule } from './components/home-grupo-empresa/home-grupo-empresa.module';
+import {HomeGrupoEmpresaModule} from './components/home-grupo-empresa/home-grupo-empresa.module';
 import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import { MenuLateralModule } from './pages/menu-lateral/menu-lateral.module';
-import { MenuModule } from './pages/menu/menu.module';
-import { BrowserModule } from '@angular/platform-browser';
+import {MenuLateralModule} from './pages/menu-lateral/menu-lateral.module';
+import {MenuModule} from './pages/menu/menu.module';
+import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SidebarModule} from 'primeng/sidebar';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ButtonModule } from 'primeng/button';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-import { HomeGrupoEmpresaComponent } from './components/home-grupo-empresa/home-grupo-empresa.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ButtonModule} from 'primeng/button';
+import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
+import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-grupo-empresa.component';
+import {AdmDefaultModule} from 'lib';
+import {environment} from '../environments/environment';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -42,7 +44,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     SidebarModule,
     BrowserModule,
     BrowserAnimationsModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
   ],
   providers: [
     {
@@ -54,6 +57,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
- })
- export class AppModule {
+})
+export class AppModule {
 }
