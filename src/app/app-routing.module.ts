@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'home-grupo-empresa',
-    loadChildren: () => import('./pages/components/home-grupo-empresa/home-grupo-empresa.module').then(m => m.HomeGrupoEmpresaModule),
+    loadChildren: () => import('./components/home-grupo-empresa/home-grupo-empresa.module').then(m => m.HomeGrupoEmpresaModule),
     // canLoad: [AuthGuard]
   },
   { path: '',   redirectTo: '/home-grupo-empresa', pathMatch: 'full' }
