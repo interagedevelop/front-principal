@@ -4,16 +4,34 @@
 @import "primeicons/primeicons.css";
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.min.css";
+// cores 
+$color-link: #676B89;
+$hover-menu: rgba(68, 72, 109, 0.07);
 body {
-    background-color: var(--surface-a);
+    background-color: var(--primary-50);
     font-family: var(--font-family);
     color: var(--text-color);
 }
 
+// menu principal
 .p-menubar {
     padding: 0;
-    background: #f8f9fa;
-    color: #495057;
+    background: transparent;
+    color: $color-link;
     border: none !important;
     border-radius: 0px;
+}
+
+.logo-header img {
+    width: 50px;
+}
+
+.btn-menu {
+    background-color: rgba(68, 72, 109, 0.07);
+    border: none;
+    color: $color-link;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:not(.p-disabled):hover {
+    background: $hover-menu;
 }
