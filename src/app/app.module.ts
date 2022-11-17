@@ -30,7 +30,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeGrupoEmpresaComponent
+    HomeGrupoEmpresaComponent,
   ],
   imports: [
     BrowserModule,

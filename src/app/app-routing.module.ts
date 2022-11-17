@@ -12,7 +12,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/components/home-grupo-empresa/home-grupo-empresa.module').then(m => m.HomeGrupoEmpresaModule),
     // canLoad: [AuthGuard]
   },
-  { path: '',   redirectTo: '/home-grupo-empresa', pathMatch: 'full' }
+  {
+    path: 'header-footer',
+    loadChildren: () => import('./pages/components/header-footer/header-footer.module').then(m => m.HeaderFooterModule),
+    // canLoad: [AuthGuard]
+  },
+  { path: '',   redirectTo: '/header-footer', pathMatch: 'full' }
 ];
 
 @NgModule({
