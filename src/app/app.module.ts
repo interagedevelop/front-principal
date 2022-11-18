@@ -12,6 +12,7 @@ import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-gr
 // import {AdmDefaultModule} from 'lib';
 import {environment} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
+import {AdmDefaultModule} from 'lib';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
