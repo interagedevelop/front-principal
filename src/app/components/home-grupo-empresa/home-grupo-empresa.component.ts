@@ -1,6 +1,7 @@
-import { PrimeNGConfig } from 'primeng/api';
-import { Component, OnInit } from '@angular/core';
-import {TesteService} from 'lib';
+import {PrimeNGConfig} from 'primeng/api';
+import {Component, OnInit} from '@angular/core';
+import {ContratoService} from '../../service/contrato.service';
+import {AuthenticationService} from 'lib';
 
 @Component({
   selector: 'app-home-grupo-empresa',
@@ -9,15 +10,19 @@ import {TesteService} from 'lib';
 })
 export class HomeGrupoEmpresaComponent implements OnInit {
 
+  authUser: any;
+
   constructor(private primengConfig: PrimeNGConfig,
-              private testeService: TesteService) { }
-
-  ngOnInit() {
-
-    this.primengConfig.ripple = true;
+              private contratoService: ContratoService,
+              private authenticationService: AuthenticationService) {
+    this.authUser = this.authenticationService.authUser;
   }
 
-  teste() {
-    this.testeService.teste()
+  async ngOnInit() {
+    if (this.authUser != null) {
+      const result = await this.contratoService.buscarEmpresaUsuario(this.authUser.usuario.id);
+
+    }
+    this.primengConfig.ripple = true;
   }
 }

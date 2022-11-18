@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {KeycloakProfile} from 'keycloak-js';
 import {KeycloakService} from 'keycloak-angular';
+import {AuthenticationService} from 'lib'
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
 
   public token: string | undefined;
 
-  constructor(private readonly keycloak: KeycloakService) {
+  constructor(private readonly keycloak: KeycloakService,
+              private authenticationService: AuthenticationService) {
 
   }
 
@@ -24,6 +26,10 @@ export class AppComponent implements OnInit {
     if (this.isLoggedIn) {
       this.userProfile = await this.keycloak.loadUserProfile();
       this.token = await this.keycloak.getToken();
+      if (this.userProfile.username != null) {
+        this.authenticationService.login(this.userProfile.username, this.token);
+      }
+
     } else {
       this.login()
     }

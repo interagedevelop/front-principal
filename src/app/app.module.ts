@@ -12,6 +12,7 @@ import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-grupo-empresa.component';
 import {AdmDefaultModule} from 'lib';
 import {environment} from '../environments/environment';
+import {HttpClientModule} from '@angular/common/http';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -45,6 +46,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserModule,
     BrowserAnimationsModule,
     KeycloakAngularModule,
+    HttpClientModule,
     AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
   ],
   providers: [
