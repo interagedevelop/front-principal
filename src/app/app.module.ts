@@ -1,7 +1,5 @@
 import {HomeGrupoEmpresaModule} from './components/home-grupo-empresa/home-grupo-empresa.module';
 import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import {MenuLateralModule} from './pages/menu-lateral/menu-lateral.module';
-import {MenuModule} from './pages/menu/menu.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SidebarModule} from 'primeng/sidebar';
@@ -37,8 +35,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MenuModule,
-    MenuLateralModule,
     HomeGrupoEmpresaModule,
     ButtonModule,
     SidebarModule,
