@@ -1,3 +1,4 @@
+import { MainMenuModule } from './main-menu/main-menu.module';
 import {HomeGrupoEmpresaModule} from './components/home-grupo-empresa/home-grupo-empresa.module';
 import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
@@ -8,7 +9,7 @@ import {AppComponent} from './app.component';
 import {ButtonModule} from 'primeng/button';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-grupo-empresa.component';
-import {AdmDefaultModule} from 'lib';
+// import {AdmDefaultModule} from 'lib';
 import {environment} from '../environments/environment';
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -30,7 +31,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeGrupoEmpresaComponent,
+    HomeGrupoEmpresaComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserModule,
     BrowserAnimationsModule,
     KeycloakAngularModule,
-    AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
+    MainMenuModule,
+    // AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
   ],
   providers: [
     {

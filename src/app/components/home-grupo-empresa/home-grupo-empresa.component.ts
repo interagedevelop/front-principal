@@ -1,6 +1,6 @@
 import { PrimeNGConfig } from 'primeng/api';
 import { Component, OnInit } from '@angular/core';
-import {TesteService} from 'lib';
+// import {TesteService} from 'lib';
 
 @Component({
   selector: 'app-home-grupo-empresa',
@@ -10,14 +10,15 @@ import {TesteService} from 'lib';
 export class HomeGrupoEmpresaComponent implements OnInit {
 
   constructor(private primengConfig: PrimeNGConfig,
-              private testeService: TesteService) { }
+              // private testeService: TesteService
+              ) { }
 
   ngOnInit() {
 
     this.primengConfig.ripple = true;
   }
 
-  teste() {
-    this.testeService.teste()
-  }
+  // teste() {
+  //   this.testeService.teste()
+  // }
 }
