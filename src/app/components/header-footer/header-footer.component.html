@@ -1,4 +1,5 @@
 <p-menubar [model]="items">
+
     <ng-template pTemplate="start">
         <div class="logo-header">
             <img src="assets/logo/default-logo.png" alt="logo da empresa">
@@ -7,10 +8,13 @@
 
     <ng-template pTemplate="end">
         <button pButton type="button" icon="pi pi-bell" iconPos="left" class="btn-menu mr-2"></button>
-        <button pButton type="button" icon="pi pi-user" iconPos="left" class="btn-menu"></button>
+        <button pButton type="button" icon="pi pi-user" iconPos="left" class="btn-menu" (click)="menu.toggle($event)"></button>
+        <p-menu #menu [popup]="true" [model]="itemspopup"></p-menu>
     </ng-template>
 
 </p-menubar>
+
+<!-- <app-sidemenu></app-sidemenu> -->
 
 <section class="layout-footer">
     <img class="logo-empresa" src="assets/logo/default-logo.png" alt="logo empresa">

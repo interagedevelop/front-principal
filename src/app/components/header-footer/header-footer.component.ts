@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderFooterComponent implements OnInit {
 
   items!: MenuItem[];
+  itemspopup!: MenuItem[];
 
   constructor() { }
 
@@ -37,9 +38,13 @@ export class HeaderFooterComponent implements OnInit {
               {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
           ]
       }
-  ];
+    ];
 
+    this.itemspopup = [          
+      {label: 'Delete', icon: 'pi pi-fw pi-trash'},
+      {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
   
+    ];
   }
 
 }
