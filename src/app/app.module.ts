@@ -9,7 +9,6 @@ import {AppComponent} from './app.component';
 import {ButtonModule} from 'primeng/button';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-grupo-empresa.component';
-// import {AdmDefaultModule} from 'lib';
 import {environment} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
 import {AdmDefaultModule} from 'lib';

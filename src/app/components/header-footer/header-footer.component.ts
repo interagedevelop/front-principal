@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderFooterComponent implements OnInit {
 
+  sideNavStatus: boolean = false;
+
   items!: MenuItem[];
   itemspopup!: MenuItem[];
 
