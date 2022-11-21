@@ -22,8 +22,7 @@
 </section> -->
 
 <div class="container-fluid g-0">
-    <app-header></app-header>
-    <!-- (sideNavToggled)="sideNavStatus = $event" -->
+    <app-header (sideNavToggled)="sideNavStatus = $event"></app-header>
 
     <main>
         <app-sidemenu [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open': sideNavStatus}"></app-sidemenu>
