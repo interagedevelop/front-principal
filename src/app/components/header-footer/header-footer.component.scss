@@ -1,20 +1,3 @@
-// .p-menubar {
-//     padding: 0;
-//     background: #f8f9fa;
-//     color: #495057;
-//     border: none !important;
-//     border-radius: 0px;
-// }
-// .layout-footer {
-//     height: 4rem;
-//     padding: 0 2rem;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-// }
-// .layout-footer img {
-//     width: 50px;
-// }
 .black-border {
     border: 1px solid black;
 }
@@ -34,7 +17,7 @@ main {
     z-index: 1;
 }
 
-app-sidenav {
+app-sidemenu {
     position: absolute;
     left: 0rem;
     width: 60px;
@@ -61,4 +44,28 @@ app-sidenav {
 .display-area-shrink {
     width: calc(100% - 250px);
     left: 250px;
+}
+
+app-footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    height: 4rem;
+    z-index: -1;
+    // background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 425px) {
+    app-sidemenu {
+        display: none;
+    }
+    .display-area {
+        position: initial;
+        left: none;
+        width: 100%;
+    }
+    .display-area-shrink {
+        width: auto;
+        left: 0;
+    }
 }

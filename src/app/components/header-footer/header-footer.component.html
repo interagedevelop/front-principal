@@ -1,34 +1,17 @@
-<!-- <p-menubar [model]="items">
-
-    <ng-template pTemplate="start">
-        <div class="logo-header">
-            <img src="assets/logo/default-logo.png" alt="logo da empresa">
-        </div>
-    </ng-template>
-
-    <ng-template pTemplate="end">
-        <button pButton type="button" icon="pi pi-bell" iconPos="left" class="btn-menu mr-2"></button>
-        <button pButton type="button" icon="pi pi-user" iconPos="left" class="btn-menu" (click)="menu.toggle($event)"></button>
-        <p-menu #menu [popup]="true" [model]="itemspopup"></p-menu>
-    </ng-template>
-
-</p-menubar> -->
-
-<!-- <app-sidemenu></app-sidemenu> -->
-
-<!-- <section class="layout-footer">
-    <img class="logo-empresa" src="assets/logo/default-logo.png" alt="logo empresa">
-    <p>Interage - 2022</p>
-</section> -->
-
 <div class="container-fluid g-0">
     <app-header (sideNavToggled)="sideNavStatus = $event"></app-header>
 
-    <main>
+    <!-- <main>
+
         <app-sidemenu [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open': sideNavStatus}"></app-sidemenu>
 
         <div class="display-area p-3" [ngClass]="{'display-area-shrink': sideNavStatus}">
             <p class="fs-1 fw-bold fst-italic">Main Display Area</p>
         </div>
-    </main>
+
+
+    </main> -->
+
+    <!-- <app-footer [ngClass]="{'display-area-shrink': sideNavStatus}"></app-footer> -->
+
 </div>
