@@ -9,8 +9,9 @@ export class ContratoService extends Service {
     super('/auth-erp/contratos', inj)
   }
 
-  async buscarEmpresaUsuario(usuarioId: number) {
-    const url = `/contratos/buscarEmpresaUsuario/${usuarioId}`;
-    const result = await this.http.getBlob(url);
+  async buscarEmpresaUsuario(usuarioId: number): Promise<any> {
+    const url = `${this.http.apiUrl}/auth-erp/contratos/buscarEmpresaUsuario/${usuarioId}`;
+    return await this.http.httpCliente.get(url).toPromise();
+
   }
 }

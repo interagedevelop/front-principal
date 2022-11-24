@@ -1,12 +1,83 @@
 <h1>
-    Selecione Empresa
+  Selecione Empresa
 </h1>
 <section class="p-fluid empresa">
-    <div class="empresa-item">
-        <div class="logo-empresa">
-            <img src="assets/logo/default-logo.png" alt="logo da empresa">
-        </div>
-        <h3>Nome da Empresa</h3>
-        <!-- <button pButton type="button" label="Acessar" (click)="teste()"></button> -->
+  <div class="empresa-item" *ngFor="let item of listaEmpresa">
+    <div class="logo-empresa">
+      <img src="{{'data:image/jpg;base64,' + item?.bytes}} " width="145" height="145">
     </div>
+    <h3>{{item.razaoSocial}}</h3>
+    <!-- <button pButton type="button" label="Acessar" (click)="teste()"></button> -->
+  </div>
+</section>
+<h3>Todos Os Aplicativos</h3>
+
+<section class="p-grid">
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">ERP</p>
+      <img src="assets/layout/images/modulos/erp.png" alt="controle de estoque" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Gerência MED</p>
+      <img src="assets/layout/images/modulos/ge-med.png" alt="Gerencia MED" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Bilhetin</p>
+      <img src="assets/layout/images/modulos/bilhetin.png" alt="Bilhetin" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Gerência PET</p>
+      <img src="assets/layout/images/modulos/pet.png" alt="Gerencia PET" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Frete</p>
+      <img src="assets/layout/images/modulos/frete.png" alt="Gerencia PET" width="50">
+    </div>
+  </div>
+
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Clube de Promoção</p>
+      <img src="assets/layout/images/modulos/clube-promo.png" alt="Gerencia PET" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">PDV Restaurante</p>
+      <img src="assets/layout/images/modulos/restaurante.png" alt="Gerencia PET" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Condominio</p>
+      <img src="assets/layout/images/modulos/condominio.png" alt="Condominio" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Financeiro</p>
+      <img src="assets/layout/images/modulos/financeiro.png" alt="Controle financeiro" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover">
+      <p class="titulo-modulo">Aluguel Bicicletas</p>
+      <img src="assets/layout/images/modulos/bike.png" alt="Aluguel de Bicicletas" width="50">
+    </div>
+  </div>
+  <div class="p-col-12 p-md-3 p-sm-12">
+    <div class="card box-display btn-hover disabled">
+      <p class="titulo-modulo">Fluxo de Caixa</p>
+      <img src="assets/layout/images/modulos/fluxo.png" alt="Fluxo de Caixa" width="50">
+    </div>
+  </div>
 </section>
