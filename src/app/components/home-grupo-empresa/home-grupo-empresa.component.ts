@@ -1,8 +1,8 @@
 import {PrimeNGConfig} from 'primeng/api';
 import {Component, OnInit} from '@angular/core';
 import {ContratoService} from '../../service/contrato.service';
-import {AuthenticationService, EmpresaService} from 'lib';
-import {DomSanitizer} from '@angular/platform-browser';
+import {AuthenticationService} from 'lib';
+import {KeycloakService} from 'keycloak-angular';
 
 @Component({
   selector: 'app-home-grupo-empresa',
@@ -20,7 +20,9 @@ export class HomeGrupoEmpresaComponent implements OnInit {
 
   constructor(private primengConfig: PrimeNGConfig,
               private contratoService: ContratoService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private keycloakService: KeycloakService)
+  {
     this.empresaSelecionada = false;
   }
 
@@ -37,10 +39,16 @@ export class HomeGrupoEmpresaComponent implements OnInit {
     this.listaModulos = await this.contratoService.buscarContratoEmpresa(empresaId, this.authUser.usuario.id);
     if (this.listaModulos.length > 0) {
       this.empresaSelecionada = true;
+
     }
   }
 
   voltar() {
     this.empresaSelecionada = false;
+  }
+
+  logoff() {
+    this.authenticationService.logout();
+    this.keycloakService.logout();
   }
 }

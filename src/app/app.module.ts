@@ -1,4 +1,3 @@
-import {MainMenuModule} from './main-menu/main-menu.module';
 import {HomeGrupoEmpresaModule} from './components/home-grupo-empresa/home-grupo-empresa.module';
 import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
@@ -11,9 +10,7 @@ import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-grupo-empresa.component';
 import {environment} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
-import {AdmDefaultModule} from 'lib';
-import {AuthenticationService} from 'lib';
-import {ConfirmationService} from 'primeng/api';
+import {AdmDefaultModule, LayoutModule} from 'lib';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -46,6 +43,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserAnimationsModule,
     KeycloakAngularModule,
     HttpClientModule,
+    LayoutModule,
     AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
   ],
   providers: [
