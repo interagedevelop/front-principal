@@ -1,4 +1,4 @@
-<app-layout>
+<app-layout (onLogoff)=" logoff()">
   <section class="p-fluid empresa p-grid" *ngIf="!empresaSelecionada">
     <div class="p-col-12">
       <h1>
@@ -20,7 +20,7 @@
     <div class="p-col-12 p-md-3 p-sm-12" *ngFor="let modulo of listaModulos">
       <div class="card box-display btn-hover">
         <p class="titulo-modulo">{{modulo.nomeLogo}}</p>
-        <img src="{{'data:image/jpg;base64,' + modulo?.bytes}} " width="145" height="145">
+        <img src="{{'da ta:image/jpg;base64,' + modulo?.bytes}} " width="145" height="145">
       </div>
     </div>
     <button pButton type="button" label="Voltar" (click)="voltar()"></button>

@@ -9,15 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'header-footer',
-    loadChildren: () => import('./components/header-footer/header-footer.module').then(m => m.HeaderFooterModule),
+    loadChildren: () => import('lib').then(m => m.AdmDefaultModule),
     // canLoad: [AuthGuard]
   },
   {
     path: 'layout',
-    loadChildren: () => import('./main-menu/main-menu.module').then(m => m.MainMenuModule),
+    loadChildren: () => import('lib').then(m => m.AdmDefaultModule),
     // canLoad: [AuthGuard]
   },
-  { path: '',   redirectTo: '/header-footer', pathMatch: 'full' }
+  { path: '',   redirectTo: '/home-grupo-empresa', pathMatch: 'full' }
 ];
 
 @NgModule({

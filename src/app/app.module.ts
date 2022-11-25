@@ -10,8 +10,7 @@ import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {HomeGrupoEmpresaComponent} from './components/home-grupo-empresa/home-grupo-empresa.component';
 import {environment} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
-import {AdmDefaultModule} from 'lib';
-import {MainMenuModule} from './main-menu/main-menu.module';
+import {AdmDefaultModule, LayoutModule} from 'lib';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -44,8 +43,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserAnimationsModule,
     KeycloakAngularModule,
     HttpClientModule,
-    AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema),
-    MainMenuModule
+    LayoutModule,
+    AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
   ],
   providers: [
     {
