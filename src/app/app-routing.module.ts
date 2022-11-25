@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./components/header-footer/header-footer.module').then(m => m.HeaderFooterModule),
     // canLoad: [AuthGuard]
   },
+  {
+    path: 'layout',
+    loadChildren: () => import('./main-menu/main-menu.module').then(m => m.MainMenuModule),
+    // canLoad: [AuthGuard]
+  },
   { path: '',   redirectTo: '/header-footer', pathMatch: 'full' }
 ];
 

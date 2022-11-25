@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {AuthenticationService} from 'lib';
+// import {KeycloakService} from 'lib';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,9 @@ export class HeaderComponent implements OnInit {
   menuStatus: boolean = false;
   isMenuOpen = false;
 
-  constructor() { }
+  constructor(
+              private authenticationService: AuthenticationService) {
+  }
 
   ngOnInit(): void {
   }
@@ -25,4 +29,8 @@ export class HeaderComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  async logout() {
+    await this.authenticationService.logout();
+    // await this.keycloakService.logout();
+  }
 }

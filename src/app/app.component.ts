@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   public userProfile: KeycloakProfile | null = null;
 
   public token: string | undefined;
+  private authUser: any;
+  public sid: string = '';
+
+
 
   constructor(private readonly keycloak: KeycloakService,
               private authenticationService: AuthenticationService) {
@@ -21,6 +25,8 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.authUser = this.authenticationService.authUser;
+
     this.authenticationService.carregarSessao();
 
     const authUser = this.authenticationService.authUser;
@@ -30,14 +36,21 @@ export class AppComponent implements OnInit {
       if (this.isLoggedIn) {
         this.userProfile = await this.keycloak.loadUserProfile();
         this.token = await this.keycloak.getToken();
+
+        const jwtParts: string[] = this.token.split('.');
+        const jwtBody = atob(jwtParts[1]);
+        const claims = JSON.parse(jwtBody);
+        this.sid = claims.sid
+
         if (this.userProfile.username != null) {
-          this.authenticationService.login(this.userProfile.username, this.token);
+          this.authenticationService.login(this.userProfile.username, this.token, this.sid);
         }
 
       } else {
         this.login()
       }
     }
+    console.log(this.token);
 
   }
 
