@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sidemenu.component.scss']
 })
 export class SidemenuComponent implements  OnInit {
-  @Input() sideNavStatus: boolean = false
+  @Input() sideNavStatus: boolean = false;
+  dropdownMenuItem: boolean = false;
 
   list = [
     {
@@ -16,32 +17,32 @@ export class SidemenuComponent implements  OnInit {
     },
     {
     number: '2',
-    name: 'Analytics',
+    name: 'Graficos',
     icon:'fa-solid fa-chart-line',
     },
     {
     number: '3',
-    name: 'Products',
+    name: 'Produtos',
     icon:'fa-solid fa-box',
     },
     {
     number: '4',
-    name: 'Order',
+    name: 'Pedidos',
     icon:'fa-solid fa-cart-shopping',
     },
     {
     number: '5',
-    name: 'Settings',
+    name: 'Configurações',
     icon:'fa-solid fa-gear',
     },
     {
     number: '6',
-    name: 'About',
+    name: 'Sobre',
     icon:'fa-solid fa-circle-info',
     },
     {
     number: '7',
-    name: 'Contact',
+    name: 'Contato',
     icon:'fa-solid fa-phone',
     },
   ];

@@ -4,5 +4,20 @@
             <i class="{{item.icon}}"></i>
             <span><a href="#">{{item.name}}</a></span>
         </li>
+
+        <li class="nav-list-item nav-list-dropdown">
+            <i class="fa-solid fa-home"></i>
+            <span><a href="#">Dropdown</a></span>
+            <button class="nav-btn-dropdown">
+                <i class="fa-solid fa-caret-right" [ngClass]="{'fa-caret-down': dropdownMenuItem}"></i>
+            </button>
+            <ul class="nav-list-dropdown-items">
+                <li>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <span><a href="#">Dropdown</a></span>
+                </li>
+            </ul>
+        </li>
+
     </ul>
 </div>
