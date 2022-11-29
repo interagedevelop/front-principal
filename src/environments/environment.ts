@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   apiUrl:'http://localhost:8081/api',
-  nomeSistema:'Interage'
+  nomeSistema:'Interage',
+  moduloId: 1,
+  moduloNome: 'principal'
 };
 
 

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {KeycloakProfile} from 'keycloak-js';
 import {KeycloakService} from 'keycloak-angular';
 import {AuthenticationService} from 'lib'
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
 
   public token: string | undefined;
   private authUser: any;
-  public sid: string = '';
+  public moduloIdselecionado: number | any;
 
   menuSidebar = [
     {
@@ -83,13 +84,8 @@ export class AppComponent implements OnInit {
         this.userProfile = await this.keycloak.loadUserProfile();
         this.token = await this.keycloak.getToken();
 
-        const jwtParts: string[] = this.token.split('.');
-        const jwtBody = atob(jwtParts[1]);
-        const claims = JSON.parse(jwtBody);
-        this.sid = claims.sid
-
         if (this.userProfile.username != null) {
-          this.authenticationService.login(this.userProfile.username, this.token, this.sid);
+          this.authenticationService.login(this.userProfile.username, this.token, environment.moduloId);
         }
       } else {
         this.login()
