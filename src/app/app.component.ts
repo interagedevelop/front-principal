@@ -17,10 +17,56 @@ export class AppComponent implements OnInit {
   private authUser: any;
   public sid: string = '';
 
+  menuSidebar = [
+    {
+      link_name: "Home",
+      link: "#",
+      icon: "fa-solid fa-house",
+      sub_menu: []
+    }, {
+      link_name: "Categoria",
+      link: null,
+      icon: "fa-solid fa-house",
+      sub_menu: [
+        {
+          link_name: "Teste",
+          link: "#",
+        }, {
+          link_name: "Teste",
+          link: "#",
+        }, {
+          link_name: "Teste",
+          link: "#",
+        }
+      ]
+    }, {
+      link_name: "Financeiro",
+      link: null,
+      icon: "fa-solid fa-house",
+      sub_menu: [
+        {
+          link_name: "Teste",
+          link: "#",
+        }, {
+          link_name: "Teste",
+          link: "#",
+        }, {
+          link_name: "Teste",
+          link: "#",
+        }
+      ]
+    }, {
+      link_name: "Relatorios",
+      link: "#",
+      icon: "fa-solid fa-house",
+      sub_menu: []
+    }
+  ];
 
 
   constructor(private readonly keycloak: KeycloakService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private keycloakService: KeycloakService) {
 
   }
 
@@ -45,13 +91,10 @@ export class AppComponent implements OnInit {
         if (this.userProfile.username != null) {
           this.authenticationService.login(this.userProfile.username, this.token, this.sid);
         }
-
       } else {
         this.login()
       }
     }
-    console.log(this.token);
-
   }
 
   public login() {
@@ -60,5 +103,10 @@ export class AppComponent implements OnInit {
 
   public logout() {
     this.keycloak.logout();
+  }
+
+  logoff() {
+    this.authenticationService.logout();
+    this.keycloakService.logout();
   }
 }
