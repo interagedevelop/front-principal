@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
         this.token = await this.keycloak.getToken();
 
         if (this.userProfile.username != null) {
-          this.authenticationService.login(this.userProfile.username, this.token, environment.moduloId);
+         await this.authenticationService.login(this.userProfile.username, this.token, null);
         }
       } else {
         this.login()
