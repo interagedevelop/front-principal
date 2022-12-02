@@ -20,4 +20,11 @@ export class ContratoService extends Service {
 
 
   }
+
+  // async salvarSessao(empresaId: number, sid: string | any, usuarioId: number): Promise<void> {
+  //   const url = '/auth-erp/contratos/salvarSessao';
+  //   const entrada = {empresaId, sid, usuarioId};
+  //   await this.http.post(url, entrada);
+  //
+  // }
 }

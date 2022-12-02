@@ -65,44 +65,11 @@ export class AppComponent implements OnInit {
   ];
 
 
-  constructor(private readonly keycloak: KeycloakService,
-              private authenticationService: AuthenticationService,
-              private keycloakService: KeycloakService) {
-
+  constructor(key: KeycloakService,
+              authenticationService: AuthenticationService) {
+    authenticationService.keycloakService = key;
   }
 
   async ngOnInit() {
-    this.authUser = this.authenticationService.authUser;
-
-    this.authenticationService.carregarSessao();
-
-    const authUser = this.authenticationService.authUser;
-    if (!authUser) {
-      this.isLoggedIn = await this.keycloak.isLoggedIn();
-
-      if (this.isLoggedIn) {
-        this.userProfile = await this.keycloak.loadUserProfile();
-        this.token = await this.keycloak.getToken();
-
-        if (this.userProfile.username != null) {
-         await this.authenticationService.login(this.userProfile.username, this.token, null);
-        }
-      } else {
-        this.login()
-      }
-    }
-  }
-
-  public login() {
-    this.keycloak.login();
-  }
-
-  public logout() {
-    this.keycloak.logout();
-  }
-
-  logoff() {
-    this.authenticationService.logout();
-    this.keycloakService.logout();
   }
 }

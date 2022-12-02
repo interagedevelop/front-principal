@@ -1,7 +1,7 @@
 import {PrimeNGConfig} from 'primeng/api';
-import {Component, OnInit} from '@angular/core';
+import {Component, Injector, OnInit} from '@angular/core';
 import {ContratoService} from '../../service/contrato.service';
-import {AuthenticationService} from 'lib';
+import {DadosCompartilhadosService, PageBaseComponent} from 'lib';
 import {KeycloakService} from 'keycloak-angular';
 
 @Component({
@@ -9,9 +9,7 @@ import {KeycloakService} from 'keycloak-angular';
   templateUrl: './home-grupo-empresa.component.html',
   styleUrls: ['./home-grupo-empresa.component.scss']
 })
-export class HomeGrupoEmpresaComponent implements OnInit {
-
-  authUser: any;
+export class HomeGrupoEmpresaComponent extends PageBaseComponent implements OnInit {
   listaEmpresa: any;
   imagemTeste: any;
   listaModulos: any;
@@ -20,26 +18,29 @@ export class HomeGrupoEmpresaComponent implements OnInit {
 
   constructor(private primengConfig: PrimeNGConfig,
               private contratoService: ContratoService,
-              private authenticationService: AuthenticationService,
-              private keycloakService: KeycloakService)
-  {
+              inj: Injector,
+              private dadosCompartilhadosService: DadosCompartilhadosService) {
+    super(inj);
     this.empresaSelecionada = false;
   }
 
-  async ngOnInit() {
-    this.authUser = this.authenticationService.authUser;
-
-    if (this.authUser != null) {
-      this.listaEmpresa = await this.contratoService.buscarEmpresaUsuario(this.authUser.usuario.id);
+  override async ngOnInit() {
+    await super.ngOnInit();//
+    if (this.authenticationService.authUser != null) {
+      this.listaEmpresa = this.authenticationService.authUser.empresas;
     }
   }
 
   async buscarContratoEmpresa(empresaId: number) {
-    this.authUser.empresaId = empresaId;
-    this.listaModulos = await this.contratoService.buscarContratoEmpresa(empresaId, this.authUser.usuario.id);
+
+    if (this.authenticationService.authUser) {
+      this.listaModulos = await this.contratoService.buscarContratoEmpresa(empresaId,
+        this.authenticationService.authUser.usuario.id);
+      await this.authenticationService.setEmpresaLogada(empresaId);
+
+    }
     if (this.listaModulos.length > 0) {
       this.empresaSelecionada = true;
-
     }
   }
 
@@ -47,8 +48,11 @@ export class HomeGrupoEmpresaComponent implements OnInit {
     this.empresaSelecionada = false;
   }
 
-  logoff() {
-    this.authenticationService.logout();
-    this.keycloakService.logout();
+  async acaoAbrirSistema(modulo: any) {
+    if (this.authenticationService.authUser) {
+      await this.authenticationService.salvarSessao(this.dadosCompartilhadosService.empresaSelecionada.id,
+        this.authenticationService.authUser.sid, this.authenticationService.authUser.usuario.id);
+    }
+    window.location.href = modulo.url;
   }
 }
