@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .empresa-item {
@@ -18,11 +19,52 @@
         margin: 0.5em 0;
     }
     img {
-        width: 20vh;
+        width: 145px;
+        height: 145px;
     }
-    span {
-        font-weight: 300;
-        max-width: 240px;
-        margin-bottom: 16px;
-    }
+}
+
+.empresa button {
+    width: 100px;
+}
+
+.box-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(232, 242, 255, 0.692) 0px 3px 5px;
+    padding: 1rem;
+    // background-color: rgba(255, 182, 231, 0.363);
+}
+
+.btn-hover {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 30px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-image: linear-gradient(to right, #56CCF2, #2F80ED, #56CCF2, #2F80ED);
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.titulo-modulo {
+    margin: 0;
+    color: #44486D;
+}
+
+.link__modulo {
+    text-decoration: none;
+    // font-size: 12px;
 }
