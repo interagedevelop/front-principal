@@ -44,7 +44,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     KeycloakAngularModule,
     HttpClientModule,
     LayoutModule,
-    AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema)
+    AdmDefaultModule.forRoot(environment.apiUrl, environment.nomeSistema, null)
   ],
   providers: [
     {

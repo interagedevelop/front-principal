@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
+import {PageProcessoModule} from 'lib'
 
 
 
@@ -15,6 +16,7 @@ import {ButtonModule} from 'primeng/button';
     CommonModule,
     CardModule,
     ButtonModule,
+    PageProcessoModule,
     RouterModule.forChild([
       {path: '', component: HomeGrupoEmpresaComponent}
     ])
