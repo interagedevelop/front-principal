@@ -19,8 +19,10 @@
         margin: 0.5em 0;
     }
     img {
-        width: 145px;
-        height: 145px;
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        object-position: center;
     }
 }
 
