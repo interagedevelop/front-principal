@@ -17,7 +17,7 @@ export class HomeGrupoEmpresaComponent extends PageBaseComponent implements OnIn
   empresaSelecionada: boolean;
 
   constructor(private primengConfig: PrimeNGConfig,
-              private contratoService: ContratoService,
+                private contratoService: ContratoService,
               inj: Injector,
               dadosCompartilhadosService: DadosCompartilhadosService) {
     super(inj);
