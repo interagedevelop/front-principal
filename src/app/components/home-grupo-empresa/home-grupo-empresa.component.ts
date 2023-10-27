@@ -1,25 +1,21 @@
-import {PrimeNGConfig} from 'primeng/api';
 import {Component, Injector, OnInit} from '@angular/core';
 import {ContratoService} from '../../service/contrato.service';
-import {DadosCompartilhadosService, PageBaseComponent} from 'lib';
-import {KeycloakService} from 'keycloak-angular';
+import {PageProcessoComponent} from 'lib';
 
 @Component({
   selector: 'app-home-grupo-empresa',
   templateUrl: './home-grupo-empresa.component.html',
   styleUrls: ['./home-grupo-empresa.component.scss']
 })
-export class HomeGrupoEmpresaComponent extends PageBaseComponent implements OnInit {
+export class HomeGrupoEmpresaComponent extends PageProcessoComponent implements OnInit {
   listaEmpresa: any;
   imagemTeste: any;
   listaModulos: any;
 
   empresaSelecionada: boolean;
 
-  constructor(private primengConfig: PrimeNGConfig,
-                private contratoService: ContratoService,
-              inj: Injector,
-              dadosCompartilhadosService: DadosCompartilhadosService) {
+  constructor(private contratoService: ContratoService,
+              inj: Injector) {
     super(inj);
     this.empresaSelecionada = false;
   }

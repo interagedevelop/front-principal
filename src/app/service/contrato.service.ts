@@ -18,7 +18,6 @@ export class ContratoService extends Service {
     const url = `${this.http.apiUrl}/auth-erp/contratos/buscarContratoEmpresa/${empresaId}/${usuarioId}`;
     return await this.http.httpCliente.get(url).toPromise();
 
-
   }
 
   // async salvarSessao(empresaId: number, sid: string | any, usuarioId: number): Promise<void> {
